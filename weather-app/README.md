@@ -112,6 +112,12 @@ npm run build
 - **Backend**: InsForge serverless functions (or Node.js http mock)
 - **API**: OpenWeatherMap (current + 5-day forecast)
 
+## Live Demo
+
+🌐 **Deployed at:** [https://weather-analytics-dep.vercel.app/](https://weather-analytics-dep.vercel.app/)
+
+📱 **Mobile compatible** – Responsive layout works seamlessly on phones and tablets.
+
 ## License
 
 MIT
