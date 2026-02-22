@@ -96,7 +96,11 @@ function App() {
           <p className="subtitle">Real-time weather & 5-day forecast</p>
         </motion.header>
 
-        <WeatherForm onSearch={handleSearch} loading={loading} />
+        <WeatherForm
+          onSearch={handleSearch}
+          onLocationError={(msg) => setError(msg)}
+          loading={loading}
+        />
 
         {loading && (
           <div className="loader-wrap">

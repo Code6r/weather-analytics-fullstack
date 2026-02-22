@@ -33,6 +33,24 @@ function wmoToOwmIcon(code) {
   return "01d";
 }
 
+async function reverseGeocode(lat, lon) {
+  try {
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`,
+      { headers: { "User-Agent": "WeatherDashboard/1.0" } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    const a = data.address || {};
+    if (a.suburb || a.neighbourhood) return `${a.suburb || a.neighbourhood}, ${a.city || a.town || a.village || a.state || a.country || ""}`.trim();
+    if (a.city || a.town || a.village) return `${a.city || a.town || a.village}, ${a.state || a.country || ""}`.trim();
+    if (a.state) return `${a.state}, ${a.country || ""}`.trim();
+    return data.display_name || null;
+  } catch {
+    return null;
+  }
+}
+
 async function fetchWithOpenMeteo(cityOrCoords) {
   let lat, lon, name;
   if (typeof cityOrCoords === "string") {
@@ -48,7 +66,8 @@ async function fetchWithOpenMeteo(cityOrCoords) {
   } else {
     lat = cityOrCoords.lat;
     lon = cityOrCoords.lon;
-    name = `${lat.toFixed(2)},${lon.toFixed(2)}`;
+    const place = await reverseGeocode(lat, lon);
+    name = place || `${lat.toFixed(4)}, ${lon.toFixed(4)}`;
   }
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto`;
   const res = await fetch(url);

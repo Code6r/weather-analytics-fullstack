@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Search, MapPin, X } from "lucide-react";
 
-function WeatherForm({ onSearch, loading }) {
+function WeatherForm({ onSearch, onLocationError, loading }) {
   const [city, setCity] = useState("");
   const inputRef = useRef(null);
 
@@ -25,7 +25,8 @@ function WeatherForm({ onSearch, loading }) {
         const { latitude, longitude } = pos.coords;
         onSearch({ lat: latitude, lon: longitude });
       },
-      () => {}
+      (err) => onLocationError?.(err?.message || "Location access denied or unavailable"),
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
     );
   };
 
