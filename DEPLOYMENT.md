@@ -12,12 +12,10 @@ Your code is pushed to: **https://github.com/Code6r/weather-analytics-fullstack*
 
 4. **Do NOT change Root Directory** – the root `vercel.json` is configured to build from `weather-app/frontend` automatically.
 
-5. **Environment variable (required for weather to work):**  
-   In Vercel → Project Settings → Environment Variables, add:
+5. **Environment variable (optional):**  
+   The app works without any config using Open-Meteo (free, no key). For OpenWeatherMap data, add:
    - **Name:** `WEATHER_API_KEY`  
-   - **Value:** your [OpenWeatherMap API key](https://openweathermap.org/api) (free tier is fine).
-   
-   Then **redeploy** so the API picks it up.
+   - **Value:** your [OpenWeatherMap API key](https://openweathermap.org/api).
 
 6. Click **Deploy**. Vercel will build and give you a URL like `https://weather-analytics-fullstack-xxx.vercel.app`.
 
