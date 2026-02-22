@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd weather-app/frontend && npm run build",
+  "outputDirectory": "weather-app/frontend/dist",
+  "installCommand": "cd weather-app/frontend && npm install"
+}

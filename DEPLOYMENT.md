@@ -10,11 +10,7 @@ Your code is pushed to: **https://github.com/Code6r/weather-analytics-fullstack*
 
 3. **Import** the repo `Code6r/weather-analytics-fullstack` from GitHub (grant Vercel access to GitHub if asked).
 
-4. **Configure the project:**
-   - **Root Directory:** Click **Edit** and set to `weather-app/frontend`.
-   - **Framework Preset:** Vite (should be auto-detected).
-   - **Build Command:** `npm run build` (default).
-   - **Output Directory:** `dist` (default).
+4. **Do NOT change Root Directory** – the root `vercel.json` is configured to build from `weather-app/frontend` automatically.
 
 5. **Environment variables (optional):**  
    If you have a deployed backend API, add:
@@ -22,6 +18,14 @@ Your code is pushed to: **https://github.com/Code6r/weather-analytics-fullstack*
    - **Value:** your backend URL (e.g. `https://your-api.vercel.app` or your InsForge backend URL).
 
 6. Click **Deploy**. Vercel will build and give you a URL like `https://weather-analytics-fullstack-xxx.vercel.app`.
+
+---
+
+### If build still fails
+
+**Option A – Use Root Directory:** In Vercel Project Settings → General, set **Root Directory** to `weather-app/frontend`. Redeploy.
+
+**Option B – Share the error:** Copy the full build log from the Vercel deployment and share it so we can fix it.
 
 ---
 
