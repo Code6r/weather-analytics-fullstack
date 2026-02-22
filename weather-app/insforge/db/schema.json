@@ -1,0 +1,40 @@
+{
+  "tableName": "Weather",
+  "columns": [
+    {
+      "name": "location",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "temperature",
+      "type": "float",
+      "nullable": false
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "nullable": false
+    },
+    {
+      "name": "humidity",
+      "type": "float",
+      "nullable": false
+    },
+    {
+      "name": "wind_speed",
+      "type": "float",
+      "nullable": false
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "nullable": true
+    },
+    {
+      "name": "createdAt",
+      "type": "datetime",
+      "nullable": true
+    }
+  ]
+}

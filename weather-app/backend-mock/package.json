@@ -1,0 +1,13 @@
+{
+  "name": "weather-app-mock",
+  "version": "1.0.0",
+  "description": "Local mock backend for weather app (use InsForge for production)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}

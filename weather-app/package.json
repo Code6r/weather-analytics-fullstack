@@ -1,0 +1,11 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack weather application",
+  "scripts": {
+    "backend": "cd backend-mock && node server.js",
+    "frontend": "cd frontend && npm run dev",
+    "install:all": "cd frontend && npm install"
+  }
+}
